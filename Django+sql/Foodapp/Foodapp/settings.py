@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Foodapp',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +121,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',   # MySQL backend
+        'NAME': 'Foodapp',                 # Database name
+        'USER': 'root',                        # Your MySQL username
+        'PASSWORD': '1234',           # Your MySQL password
+        'HOST': '127.0.0.1',                   # Or 'localhost'
+        'PORT': '3306',                        # Default MySQL port
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    }
+}
